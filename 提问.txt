@@ -1,0 +1,60 @@
+问题：1.java中的基本类型有几种？是怎样分类的？它们之间是怎样转换的？
+它们对应的封装类是什么？ 基本类型和封装类型的区别？
+（1）java中的基本类型有8种，分为3类，
+  1）布尔类型：boolean,
+  2) 字符类型：char，
+  3) 数值类型：byte、short、int、long、float、double。
+数值类型又可以分为：
+a:整数类型：byte、short、int、long，
+b:浮点类型：float、double。
+
+  它们之间是怎样转换的？
+
+（2）Java 语言中的数据类型转换有两种：
+  1）自动类型转换:也称隐式类型转换，编译器自动完成类型转换，不需要在程序中编写代码。
+
+   转换规则：从存储范围小的类型到存储范围大的类型。
+
+   具体规则为：（byte、short、char)→int→long→float→double
+   byte、short、char之间不会相互转换，它们三者在计算时首先转换为int类型。
+
+  2）强制类型转换:也称显式类型转换，强制编译器进行类型转换，必须在程序中编写代码。会存在数据精度的损失。。
+
+  转换规则:从存储范围大的类型到存储范围小的类型。
+
+  具体规则为：double→float→long→int→（short、char、byte）
+
+  语法格式为：(转换到的类型)需要转换的值
+
+  例如：double d=3.14;
+        int i=(int) d;
+
+   它们对应的封装类是什么？
+
+   数据类型   字节      表示位数（范围）  包装类（都在java.lang包下）
+
+   byte        1B       -128~127          Byte
+   
+   short       2B       -2^15~2^15-1      Short
+ 
+   int         4B       -2^31~2^31-1      Integer
+ 
+   long        8B       -2^63~2^63-1      Long
+
+   float       4B                         Float
+
+   double      8B                         Double
+
+   char        2B                         Character
+
+   boolean                                Boolean
+
+    基本类型和封装类型的区别？
+  (1)基本类型只能按值传递，而对应的封装类是按引用传递的。
+
+  (2)基本类型是在堆栈上创建的，而所有的对象类型都是在堆上创建的。
+
+  (3)默认值不同。例如：int初始值为0，Integer初始值为null
+
+  (4)封装类的出现，是为了更方便的使用一些基本类型不具备的方法，比如valueOf（），toString（）等等。
+
